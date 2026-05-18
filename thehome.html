@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        {% with messages=get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    {{msg}}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}            
+        <p>welcome to AUTOMAIL <a href="{{url_for('mainpage')}}">click here</a></p>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AUTOMAIL - Email Sent</title>
+</head>
+<body>
+    <h2>Email Sent Successfully!</h2>
+    <p><strong>Receiver:</strong> {{ receiver }}</p>
+    <p><strong>Subject:</strong> {{ subject }}</p>
+    <p><strong>Message:</strong> {{ body }}</p>
+
+    <hr>
+    <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+</body>
+</html>
