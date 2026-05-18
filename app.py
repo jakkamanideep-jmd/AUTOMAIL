@@ -1,6 +1,6 @@
 from flask import Flask,render_template,url_for,flash,redirect
 import smtplib
-import speechrecognition as sr
+import speech_recognition as sr
 import pyttsx3
 from email.message import EmailMessage
 
@@ -16,8 +16,8 @@ def home():
 @app.route("/mainpage",methods=["POST","GET"])
 def mainpage():
     def speaker(text):
-        say=tts.say(text)
-        say.runandwait()
+        tts.say(text)
+        tts.runandwait()
 
     def mic():
         with sr.Microphone() as source:
@@ -29,12 +29,12 @@ def mainpage():
     def sendmessage(receiver,subject,body):
         server=smtplib.SMTP("smtp.gmail.com",587)
         server.starttls()
-        server.login("jakkamanideep@gmail.com","02558510")
+        server.login("jakkamanideep@gmail.com","ocrn qqaw vdjn wbtd")
         email=EmailMessage()
         email["From"]="jakkamanideep@gmail.com"
         email["To"]=receiver
         email["subject"]=subject
-        email.setcontent(body)
+        email.set_content(body)
         server.send_message(email)
         
     
